@@ -1,7 +1,9 @@
 package main
 
 import (
+  "fmt"
 	"net/http"
+  "os"
 
   "github.com/fdaines/github-actions-example/model"
   "github.com/fdaines/github-actions-example/usecase"
