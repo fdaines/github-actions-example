@@ -7,7 +7,6 @@ import (
   "github.com/fdaines/github-actions-example/usecase"
 	"github.com/labstack/echo/v4"
 )
-const PORT = ":9876"
 
 func main() {
   port := os.Getenv("PORT")
