@@ -10,16 +10,18 @@ import (
 const PORT = ":9876"
 
 func main() {
+  port := os.Getenv("PORT")
+
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
     data := usecase.RequestWorldBankData()
-    
+
 		return c.JSON(http.StatusOK, &ResponseDTO{
       Countries: data,
     })
 	})
 
-	e.Logger.Fatal(e.Start(PORT))
+	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", port)))
 }
 
 type ResponseDTO struct {
